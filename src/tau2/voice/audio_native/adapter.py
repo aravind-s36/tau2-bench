@@ -538,6 +538,18 @@ def create_adapter(
             model=model,
             reasoning_effort=reasoning_effort,
         )
+    elif provider == "atoms":
+        from tau2.voice.audio_native.atoms.discrete_time_adapter import (
+            DiscreteTimeAtomsAdapter,
+        )
+
+        adapter = DiscreteTimeAtomsAdapter(
+            tick_duration_ms=tick_duration_ms,
+            send_audio_instant=send_audio_instant,
+            model=model,
+            reasoning_effort=reasoning_effort,
+            audio_format=audio_format,
+        )
     elif provider == "avartha_pipecat":
         from tau2.voice.audio_native.avartha_pipecat.discrete_time_adapter import (
             DiscreteTimeAvarthaPipecatAdapter,

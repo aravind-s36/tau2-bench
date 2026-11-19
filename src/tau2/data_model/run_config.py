@@ -90,6 +90,7 @@ class AudioNativeConfig(BaseModel):
         "nova",
         "qwen",
         "avartha_pipecat",
+        "atoms",
         "phonic",
         "livekit",
         "launa",

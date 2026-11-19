@@ -93,6 +93,7 @@ AudioNativeProvider = Literal[
     "nova",
     "qwen",
     "avartha_pipecat",
+    "atoms",
     "phonic",
     "livekit",
 ]
@@ -345,6 +346,9 @@ class DiscreteTimeAudioNativeAgent(FullDuplexAgent[DiscreteTimeAgentState]):
             self.vad_config = QwenVADConfig()
         elif provider == "avartha_pipecat":
             # Turn detection is configured on the hosted agent.
+            self.vad_config = None
+        elif provider == "atoms":
+            # The Atoms agent does its own turn detection.
             self.vad_config = None
         elif provider == "phonic":
             # Phonic does its own turn detection.
