@@ -90,6 +90,7 @@ class AudioNativeConfig(BaseModel):
         "nova",
         "qwen",
         "avartha_pipecat",
+        "atoms",
         "phonic",
         "livekit",
         "launa",
@@ -156,7 +157,7 @@ class AudioNativeConfig(BaseModel):
         """Resolve the provider-aware default for real-time user generation."""
         if self.realtime_generation is not None:
             return self.realtime_generation
-        return self.provider in ("openai_live", "avartha_pipecat")
+        return self.provider in ("openai_live", "avartha_pipecat", "atoms")
 
     @model_validator(mode="after")
     def validate_live_config(self):

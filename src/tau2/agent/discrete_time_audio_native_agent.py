@@ -93,6 +93,7 @@ AudioNativeProvider = Literal[
     "nova",
     "qwen",
     "avartha_pipecat",
+    "atoms",
     "phonic",
     "livekit",
 ]
@@ -343,7 +344,7 @@ class DiscreteTimeAudioNativeAgent(FullDuplexAgent[DiscreteTimeAgentState]):
             from tau2.voice.audio_native.qwen.provider import QwenVADConfig
 
             self.vad_config = QwenVADConfig()
-        elif provider == "avartha_pipecat":
+        elif provider in ("avartha_pipecat", "atoms"):
             # Turn detection is configured on the hosted agent.
             self.vad_config = None
         elif provider == "phonic":

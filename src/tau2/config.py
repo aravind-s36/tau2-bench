@@ -273,6 +273,7 @@ DEFAULT_AUDIO_NATIVE_MODELS = {
     "nova": DEFAULT_NOVA_MODEL,
     "qwen": DEFAULT_QWEN_MODEL,
     "avartha_pipecat": DEFAULT_AVARTHA_MODEL,
+    "atoms": "electron-2.0",
     "phonic": DEFAULT_PHONIC_MODEL,
     "livekit": "dummy",
 }
@@ -286,6 +287,7 @@ DEFAULT_AUDIO_NATIVE_REASONING_EFFORT: dict[str, str | None] = {
     "nova": None,
     "qwen": None,
     "avartha_pipecat": None,
+    "atoms": None,
     "phonic": "high",  # intelligence level; low/medium/minimal map to standard
     "livekit": None,
 }
@@ -299,6 +301,7 @@ AUDIO_NATIVE_PROVIDER_TYPES = {
     "nova": "audio_native",
     "qwen": "audio_native",
     "avartha_pipecat": "cascaded",
+    "atoms": "cascaded",
     "phonic": "audio_native",
     "livekit": "cascaded",
 }

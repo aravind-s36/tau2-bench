@@ -552,6 +552,18 @@ def create_adapter(
             avartha_config=avartha_config,
             language=language,
         )
+    elif provider == "atoms":
+        from tau2.voice.audio_native.atoms.discrete_time_adapter import (
+            DiscreteTimeAtomsAdapter,
+        )
+
+        adapter = DiscreteTimeAtomsAdapter(
+            tick_duration_ms=tick_duration_ms,
+            send_audio_instant=send_audio_instant,
+            model=model,
+            reasoning_effort=reasoning_effort,
+            audio_format=audio_format,
+        )
     elif provider == "phonic":
         from tau2.voice.audio_native.phonic.discrete_time_adapter import (
             DiscreteTimePhonicAdapter,
