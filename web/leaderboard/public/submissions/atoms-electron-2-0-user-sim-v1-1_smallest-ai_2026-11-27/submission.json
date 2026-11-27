@@ -1,0 +1,145 @@
+{
+  "model_name": "Atoms (electron-2.0 + gpt-6.2-sol)",
+  "model_organization": "smallest.ai",
+  "submitting_organization": "smallest.ai",
+  "submission_date": "2026-11-27",
+  "submission_type": "standard",
+  "modality": "voice",
+  "contact_info": {
+    "email": "aravind@smallest.ai"
+  },
+  "results": {
+    "retail": {
+      "pass_1": 78.94736842105263
+    },
+    "airline": {
+      "pass_1": 90.0
+    },
+    "telecom": {
+      "pass_1": 95.6140350877193
+    }
+  },
+  "is_new": true,
+  "trajectories_available": true,
+  "trajectory_files": {
+    "airline": "en-airline",
+    "retail": "en-retail",
+    "telecom": "en-telecom"
+  },
+  "references": [
+    {
+      "title": "smallest.ai",
+      "url": "https://smallest.ai",
+      "type": "other"
+    }
+  ],
+  "methodology": {
+    "evaluation_date": "2026-11-25",
+    "tau2_bench_version": "2.0.0",
+    "user_simulator": "v1.1",
+    "notes": "smallest.ai Atoms voice agent: a cascade behind one agent connection, with Smallest Pulse speech recognition, electron-2.0 as the conversational model, gpt-6.2-sol (reasoning high) as the backend model that holds the policy and tools, and Smallest Waves speech synthesis. Base airline/retail/telecom task sets, regular speech complexity, 1 trial per task. Caller simulator v1.1, the default benchmark caller (openai/gpt-5.5, reasoning low), with real-time caller generation and the default hallucination reviewer. User-side voices are our own ElevenLabs voices, created with the same settings as tau2's setup_voices script; not Sierra-managed submission voices. One retail call (task 30) lost speech synthesis mid-call and was re-run regardless of its outcome.",
+    "verification": {
+      "modified_prompts": false,
+      "omitted_questions": false,
+      "details": "All 278 base tasks (airline 50, retail 114, telecom 114) have one scored trajectory. The submitted scores were computed from the saved trajectories with tau2 submit prepare and checked with tau2 submit validate."
+    }
+  },
+  "voice_config": {
+    "provider": "atoms",
+    "model": "electron-2.0",
+    "tick_duration_seconds": 0.2,
+    "max_steps_seconds": 2400.0,
+    "user_tts_provider": "elevenlabs/eleven_v3"
+  },
+  "reasoning_effort": "Backend: gpt-6.2-sol (high)",
+  "interaction_metrics": {
+    "version": "1.0",
+    "config": {
+      "tick_duration_sec": 0.2,
+      "no_yield_window_sec": 2.0,
+      "backchannel_yield_window_sec": 1.0,
+      "vocal_tic_yield_window_sec": 1.0,
+      "non_directed_yield_window_sec": 1.0,
+      "vocal_tic_response_window_sec": 2.0,
+      "non_directed_response_window_sec": 2.0
+    },
+    "domains": {
+      "airline": {
+        "response_latency_mean": 2.6073434125269985,
+        "yield_latency_mean": 1.0167938931297709,
+        "response_rate": 0.9507186858316222,
+        "yield_rate": 0.6121495327102804,
+        "agent_interruption_rate": 1.1663244353182751,
+        "selectivity_backchannel": 0.7575757575757576,
+        "selectivity_vocal_tic": 0.4742268041237113,
+        "selectivity_non_directed": 0.5876288659793815,
+        "counts": {
+          "n_simulations": 50,
+          "response_total": 487,
+          "yield_total": 214,
+          "backchannel_total": 165,
+          "vocal_tic_total": 194,
+          "non_directed_total": 97,
+          "agent_interrupts_count": 568
+        }
+      },
+      "retail": {
+        "response_latency_mean": 2.790501792114696,
+        "yield_latency_mean": 1.0262411347517735,
+        "response_rate": 0.9449618966977138,
+        "yield_rate": 0.6051502145922747,
+        "agent_interruption_rate": 0.8272650296359018,
+        "selectivity_backchannel": 0.7962962962962963,
+        "selectivity_vocal_tic": 0.4977272727272727,
+        "selectivity_non_directed": 0.5746606334841629,
+        "counts": {
+          "n_simulations": 114,
+          "response_total": 1181,
+          "yield_total": 466,
+          "backchannel_total": 324,
+          "vocal_tic_total": 440,
+          "non_directed_total": 221,
+          "agent_interrupts_count": 977
+        }
+      },
+      "telecom": {
+        "response_latency_mean": 2.6219200000000003,
+        "yield_latency_mean": 1.0005988023952095,
+        "response_rate": 0.9359790340696369,
+        "yield_rate": 0.6162361623616236,
+        "agent_interruption_rate": 1.0183451890677648,
+        "selectivity_backchannel": 0.7449664429530201,
+        "selectivity_vocal_tic": 0.444578313253012,
+        "selectivity_non_directed": 0.6261467889908257,
+        "counts": {
+          "n_simulations": 114,
+          "response_total": 2671,
+          "yield_total": 542,
+          "backchannel_total": 447,
+          "vocal_tic_total": 830,
+          "non_directed_total": 436,
+          "agent_interrupts_count": 2720
+        }
+      }
+    },
+    "overall": {
+      "response_latency_mean": 2.6732550682138982,
+      "yield_latency_mean": 1.0145446100922513,
+      "response_rate": 0.9438865388663243,
+      "yield_rate": 0.6111786365547262,
+      "agent_interruption_rate": 1.0039782180073138,
+      "selectivity_backchannel": 0.7662794989416913,
+      "selectivity_vocal_tic": 0.47217746336799865,
+      "selectivity_non_directed": 0.59614542948479,
+      "counts": {
+        "n_simulations": 278,
+        "response_total": 4339,
+        "yield_total": 1222,
+        "backchannel_total": 936,
+        "vocal_tic_total": 1464,
+        "non_directed_total": 754,
+        "agent_interrupts_count": 4265
+      }
+    }
+  }
+}
